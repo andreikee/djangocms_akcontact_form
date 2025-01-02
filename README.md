@@ -1,4 +1,6 @@
-# cmsplugin-contact-form
+# akcmsplugin-contact-form
+
+forked from [juliarizza/djangocms_contact_form](https://github.com/juliarizza/djangocms_contact_form)
 
 Django-CMS contact form plugin with default Django email integration
 
@@ -20,7 +22,7 @@ The following HTML fields can be added to the form:
 Install package:
 
 ```
-pip install cmsplugin-contact-form
+pip install akcmsplugin-contact-form
 ```
 
 Add app to `settings.py`:
@@ -28,7 +30,7 @@ Add app to `settings.py`:
 ```
 INSTALLED_APPS = (
     ...
-    'cmsplugin_contact_form',
+    'akcmsplugin_contact_form',
     ...
     )
 ```
@@ -36,5 +38,5 @@ INSTALLED_APPS = (
 Run migration:
 
 ```
-python manage.py migrate cmsplugin_contact_form
+python manage.py migrate akcmsplugin_contact_form
 ```

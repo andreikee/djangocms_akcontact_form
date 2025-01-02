@@ -1,22 +1,22 @@
 from setuptools import setup, find_packages
 
-from cmsplugin_contact_form import __version__
+from akcmsplugin_contact_form import __version__
 
 setup(
-    name='cmsplugin-contact-form',
+    name='akcmsplugin-contact-form',
     version=__version__,
     description='A Django CMS plugin to create functional contact forms.',
     long_description_content_type='text/markdown',
     long_description=open('README.md').read(),
-    maintainer='Julia Rizza',
-    maintainer_email='contato@juliarizza.com',
-    url='https://github.com/juliarizza/djangocms_contact_form',
+    maintainer='Andrei Krivoshei',
+    maintainer_email='andrei.krivoshei@gmail.com',
+    url='https://github.com/andreikee/djangocms_akcontact_form',
     license='MIT',
     keywords='django djangocms plugin form contact email',
-    packages=['cmsplugin_contact_form'],
-    package_dir={'cmsplugin_contact_form': 'cmsplugin_contact_form'},
-    package_data={'cmsplugin_contact_form': [
-        'templates/cmsplugin_contact_form/*.html']},
+    packages=['akcmsplugin_contact_form'],
+    package_dir={'akcmsplugin_contact_form': 'akcmsplugin_contact_form'},
+    package_data={'akcmsplugin_contact_form': [
+        'templates/akcmsplugin_contact_form/*.html']},
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
