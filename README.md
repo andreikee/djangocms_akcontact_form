@@ -21,11 +21,13 @@ The following HTML fields can be added to the form:
 
 Install package:
 
-```
-pip install akcmsplugin-contact-form
-```
+1. Copy the folder `akcmsplugin_contact_form` into the Django project root folder.
 
-Add app to `settings.py`:
+<!-- ```
+pip install akcmsplugin-contact-form
+``` -->
+
+2. Add app to `settings.py`:
 
 ```
 INSTALLED_APPS = (
@@ -35,7 +37,7 @@ INSTALLED_APPS = (
     )
 ```
 
-Run migration:
+3. Run migration:
 
 ```
 python manage.py migrate akcmsplugin_contact_form
