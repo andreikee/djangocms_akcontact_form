@@ -1,7 +1,8 @@
-{% load cms_tags %}
+{% extends 'cmsplugin_contact_form/field_basic.html' %}
 
-<span>
+{% block field %}
     <input type="checkbox" id="{{ instance.html_id }}" name="{{ instance.html_name }}"
         class="{{ instance.html_classes }}" value="{{ instance.value }}" {% if instance.checked %}checked{% endif %}>
-    <label for="{{ instance.html_id }}">{{ instance.label }}</label f>
-</span>
+{% endblock %}
+
+{% comment %} <label for="{{ instance.html_id }}">{{ instance.label }}</label f> {% endcomment %}

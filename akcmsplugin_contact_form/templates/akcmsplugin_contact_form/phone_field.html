@@ -1,9 +1,8 @@
-{% load cms_tags %}
+{% extends 'cmsplugin_contact_form/field_basic.html' %}
 
-<span>
-    <label for="{{ instance.html_id }}">{{ instance.label }}</label>
+{% block field %}
     <input type="tel" id="{{ instance.html_id }}" name="{{ instance.html_name }}" class="{{ instance.html_classes }}"
         placeholder="{{ instance.html_placeholder }}" value="{{ instance.default_value }}"
         maxlength="{{ instance.phone_max_length }}" {% if instance.pattern %}pattern="{{ instance.phone_pattern }}"
         {% endif %} {% if instance.required %}required{% endif %}>
-</span>
+{% endblock %}
