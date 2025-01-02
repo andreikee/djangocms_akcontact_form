@@ -1,10 +1,9 @@
-from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
-
 from cms.models import CMSPlugin
+from django.db import models
+
+# from django.utils.encoding import python_2_unicode_compatible
 
 
-@python_2_unicode_compatible
 class ContactFormCMS(CMSPlugin):
     smtp_server = models.CharField(
         blank=False,
@@ -32,7 +31,6 @@ class ContactFormCMS(CMSPlugin):
         return self.email
 
 
-@python_2_unicode_compatible
 class ContactFormBaseFieldCMS(CMSPlugin):
     label = models.CharField(
         blank=False,
@@ -55,7 +53,6 @@ class ContactFormBaseFieldCMS(CMSPlugin):
         return self.label
 
 
-@python_2_unicode_compatible
 class ContactFormTextFieldCMS(ContactFormBaseFieldCMS):
     html_placeholder = models.CharField(
         blank=True,
@@ -68,7 +65,6 @@ class ContactFormTextFieldCMS(ContactFormBaseFieldCMS):
     required = models.BooleanField()
 
 
-@python_2_unicode_compatible
 class ContactFormEmailFieldCMS(ContactFormBaseFieldCMS):
     html_placeholder = models.CharField(
         blank=True,
@@ -81,7 +77,6 @@ class ContactFormEmailFieldCMS(ContactFormBaseFieldCMS):
     required = models.BooleanField()
 
 
-@python_2_unicode_compatible
 class ContactFormPhoneFieldCMS(ContactFormBaseFieldCMS):
     html_placeholder = models.CharField(
         blank=True,
@@ -102,7 +97,6 @@ class ContactFormPhoneFieldCMS(ContactFormBaseFieldCMS):
     required = models.BooleanField()
 
 
-@python_2_unicode_compatible
 class ContactFormTextAreaFieldCMS(ContactFormBaseFieldCMS):
     html_placeholder = models.CharField(
         blank=True,
@@ -123,7 +117,6 @@ class ContactFormTextAreaFieldCMS(ContactFormBaseFieldCMS):
     required = models.BooleanField()
 
 
-@python_2_unicode_compatible
 class ContactFormCheckboxFieldCMS(ContactFormBaseFieldCMS):
     value = models.CharField(
         blank=False,
@@ -132,7 +125,6 @@ class ContactFormCheckboxFieldCMS(ContactFormBaseFieldCMS):
     checked = models.BooleanField()
 
 
-@python_2_unicode_compatible
 class ContactFormSubmitFieldCMS(ContactFormBaseFieldCMS):
     type = models.CharField(
         blank=False,
