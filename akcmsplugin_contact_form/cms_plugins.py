@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from . import models
 
 
+@plugin_pool.register_plugin
 class ContactFormCMSPlugin(CMSPluginBase):
     model = models.ContactFormCMS
     name = _("Contact Form")
@@ -71,6 +72,7 @@ class ContactFormCMSPlugin(CMSPluginBase):
         return context
 
 
+@plugin_pool.register_plugin
 class ContactFormTextFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormTextFieldCMS
     name = _("Text Field")
@@ -79,6 +81,7 @@ class ContactFormTextFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormEmailFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormEmailFieldCMS
     name = _("Email Field")
@@ -87,6 +90,7 @@ class ContactFormEmailFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormPhoneFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormPhoneFieldCMS
     name = _("Phone Field")
@@ -95,6 +99,7 @@ class ContactFormPhoneFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormTextAreaFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormTextAreaFieldCMS
     name = _("Text Area Field")
@@ -103,6 +108,7 @@ class ContactFormTextAreaFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormCheckboxFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormCheckboxFieldCMS
     name = _("Checkbox Field")
@@ -111,6 +117,7 @@ class ContactFormCheckboxFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormRadioFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormCheckboxFieldCMS
     name = _("Radio Field")
@@ -119,6 +126,7 @@ class ContactFormRadioFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormDateFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormTextFieldCMS
     name = _("Date Field")
@@ -127,6 +135,7 @@ class ContactFormDateFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormTimeFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormTextFieldCMS
     name = _("Time Field")
@@ -135,6 +144,7 @@ class ContactFormTimeFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormDateTimeFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormTextFieldCMS
     name = "Date & Time Field"
@@ -143,22 +153,10 @@ class ContactFormDateTimeFieldCMSPlugin(CMSPluginBase):
     parent_classes = ["ContactFormCMSPlugin"]
 
 
+@plugin_pool.register_plugin
 class ContactFormSubmitFieldCMSPlugin(CMSPluginBase):
     model = models.ContactFormSubmitFieldCMS
     name = _("Submit Field")
     render_template = "akcmsplugin_contact_form/submit_field.html"
     require_parent = True
     parent_classes = ["ContactFormCMSPlugin"]
-
-
-plugin_pool.register_plugin(ContactFormCMSPlugin)
-plugin_pool.register_plugin(ContactFormTextFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormEmailFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormPhoneFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormTextAreaFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormCheckboxFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormRadioFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormDateFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormTimeFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormDateTimeFieldCMSPlugin)
-plugin_pool.register_plugin(ContactFormSubmitFieldCMSPlugin)
