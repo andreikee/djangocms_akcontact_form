@@ -7,4 +7,4 @@ class CmspluginContactFormConfig(AppConfig):
     """Configuration for the cmsplugin_contact_form app."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "cmsplugin_contact_form"
+    name = "akcmsplugin_contact_form"
