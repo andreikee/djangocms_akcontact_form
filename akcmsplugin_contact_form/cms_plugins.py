@@ -1,6 +1,7 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from django.core.mail import get_connection, send_mail
+from django.conf import settings
+from django.core.mail import EmailMessage
 from django.utils.translation import gettext_lazy as _
 
 from . import models
@@ -28,12 +29,21 @@ class ContactFormCMSPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         request = context["request"]
         if request.method == "POST":
+
             message = _("New message from your website") + ":" + "\n\n"
+
             email_field = [  # noqa: RUF015
                 inst for inst in instance.child_plugin_instances
-                if isinstance(inst, models.ContactFormTextFieldCMS)
+                if isinstance(inst, models.ContactFormEmailFieldCMS)
             ][0]
+
             email_key = email_field.html_name
+            email = request.POST[email_key]
+
+            # print("instance:", instance)
+            # print("email_field:", email_field)
+            # print("email_key:", email_key)
+            # print("request.POST:", request.POST[email_key])
 
             submit_field = [  # noqa: RUF015
                 inst for inst in instance.child_plugin_instances
@@ -45,24 +55,16 @@ class ContactFormCMSPlugin(CMSPluginBase):
                 if key in ["csrfmiddlewaretoken", submit_key]:
                     continue
 
-                message += f"<b>{key.capitalize()}:</b> {request.POST[key]}\n"
+                message += f"{key.capitalize()}: {request.POST[key]}\n"
 
-            send_mail(
+            EmailMessage(
                 subject=_("New message from your website"),
-                message=message,
-                html_message=message,
-                from_email=request.POST[email_key],
-                recipient_list=[instance.email],
-                fail_silently=False,
-                connection=get_connection(
-                    backend="django.core.mail.backends.smtp.EmailBackend",
-                    host=instance.smtp_server,
-                    port=instance.smtp_port,
-                    username=instance.email,
-                    password=instance.password,
-                    use_tls=instance.use_tls
-                )
-            )
+                body=message,
+                from_email=settings.SITE_FROM_FORM_EMAIL,
+                to=[settings.SITE_FROM_FORM_EMAIL],
+                # reply_to=[instance.email],
+                bcc=[email],
+            ).send()
 
         context.update({
             "placeholder": placeholder,
