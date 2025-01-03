@@ -2,10 +2,12 @@
 
 <div class="d-flex justify-content-center m-3">
     {% if instance.type == 'button' %}
-    <button type="submit" value="{{ instance.label }}" class="{{ instance.html_classes }}" id="{{ instance.html_id }}"
-        name="{{ instance.html_name }}">{{ instance.label }}</button>
+    <button type="submit" value="{{ instance.label }}" class="{{ instance.html_classes }}"
+        {% include 'akcmsplugin_contact_form/id_and_name.html' %}
+        >{{ instance.label }}</button>
     {% elif instance.type == 'input' %}
-    <input type="submit" value="{{ instance.label }}" class="{{ instance.html_classes }}" id="{{ instance.html_id }}"
-        name="{{ instance.html_name }}" />
+    <input type="submit" value="{{ instance.label }}" class="{{ instance.html_classes }}"
+        {% include 'akcmsplugin_contact_form/id_and_name.html' %}
+        />
     {% endif %}
 </div>

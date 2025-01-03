@@ -1,9 +1,12 @@
 {% extends 'akcmsplugin_contact_form/field_basic.html' %}
 
 {% block field %}
-    <input type="datetime" id="{{ instance.html_id }}" name="{{ instance.html_name }}"
-        class="{{ instance.html_classes }}" placeholder="{{ instance.html_placeholder }}"
-        value="{{ instance.default_value }}" {% if instance.required %}required{% endif %}>
+    <input type="datetime"
+        {% include 'akcmsplugin_contact_form/id_and_name.html' %}
+        class="{{ instance.html_classes }}"
+        placeholder="{{ instance.html_placeholder }}"
+        value="{{ instance.default_value }}"
+        {% if instance.required %}required{% endif %}>
 {% endblock %}
 
 

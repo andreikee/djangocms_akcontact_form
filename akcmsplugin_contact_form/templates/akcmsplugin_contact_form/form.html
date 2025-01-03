@@ -1,6 +1,6 @@
 {% load cms_tags %}
 
-<form action="" method="POST" class="align-self-center py-3 {{ instance.html_classes }}" style="width: 500px;">
+<form action="" method="POST" class="py-3 {{ instance.html_classes }}" style="width: 500px;">
     {% csrf_token %}
 
     {% for plugin in instance.child_plugin_instances %}
