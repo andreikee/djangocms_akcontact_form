@@ -1,9 +1,19 @@
-{% load cms_tags %}
+{% load cms_tags i18n %}
 
-<form action="" method="POST" class="py-3 {{ instance.html_classes }}" style="width: 500px;">
-    {% csrf_token %}
+<div class="p-0">
+  <div class="d-flex flex-column justify-content-center my-2 shadow" style="width: 650px;">
+    <div class="d-flex justify-content-center bg-light p-2">
+      <h2>{% blocktranslate with topic=instance.topic %} {{topic}} request {% endblocktranslate %}</h2>
+    </div>
 
-    {% for plugin in instance.child_plugin_instances %}
-    {% render_plugin plugin %}
-    {% endfor %}
-</form>
+    <div class="p-3">
+      <form action="" method="POST" class="{{ instance.html_classes }}">
+        {% csrf_token %}
+
+        {% for plugin in instance.child_plugin_instances %}
+          {% render_plugin plugin %}
+        {% endfor %}
+      </form>
+    </div>
+  </div>
+</div>

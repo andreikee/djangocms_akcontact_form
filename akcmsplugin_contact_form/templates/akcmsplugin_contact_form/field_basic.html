@@ -1,11 +1,11 @@
-{% load cms_tags %}
+{% load cms_tags i18n %}
 
-<div class="d-flex justify-content-between align-items-center p-2">
+<div class="d-flex form-group justify-content-between align-items-center p-2">
   <div class="d-flex align-items-start p-1">
-    <label for="{{ instance.label|slugify }}" class="">{{ instance.label }}</label>
+    <label for="{{ instance.label|slugify }}" class="">{% translate instance.label %}</label>
   </div>
 
-  <div class="d-flex justify-content-end">
+  <div class="inp-item d-flex justify-content-end p-1" style="width: 70%;">
     {% block field %}
 
     {% endblock %}

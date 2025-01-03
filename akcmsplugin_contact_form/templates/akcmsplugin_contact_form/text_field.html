@@ -3,7 +3,7 @@
 {% block field %}
     <input type="text"
         {% include 'akcmsplugin_contact_form/id_and_name.html' %}
-        class="{{ instance.html_classes }}"
+        class="form-control {{ instance.html_classes }}"
         placeholder="{{ instance.html_placeholder }}"
         value="{{ instance.default_value }}"
         {% if instance.required %}required{% endif %}>

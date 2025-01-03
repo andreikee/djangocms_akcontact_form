@@ -5,7 +5,7 @@
         {% include 'akcmsplugin_contact_form/id_and_name.html' %}
         cols="{{ instance.html_cols }}"
         rows="{{ instance.html_rows }}"
-        class="{{ instance.html_classes }}"
+        class="form-control {{ instance.html_classes }}"
         placeholder="{{ instance.html_placeholder }}"
         {% if instance.required %}required{% endif %}>{{ instance.default_value }}</textarea>
 {% endblock %}
