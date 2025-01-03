@@ -1,27 +1,12 @@
 from cms.models import CMSPlugin
 from django.db import models
 
-# from django.utils.encoding import python_2_unicode_compatible
-
 
 class ContactFormCMS(CMSPlugin):
-    smtp_server = models.CharField(
-        blank=False,
-        max_length=255
-    )
-    smtp_port = models.CharField(
-        blank=False,
-        max_length=10
-    )
     email = models.CharField(
         blank=False,
         max_length=255
     )
-    password = models.CharField(
-        blank=False,
-        max_length=255
-    )
-    use_tls = models.BooleanField()
     html_classes = models.CharField(
         blank=True,
         max_length=255
@@ -38,11 +23,11 @@ class ContactFormBaseFieldCMS(CMSPlugin):
     )
     html_id = models.CharField(
         blank=False,
-        max_length=50
+        max_length=50,
     )
     html_name = models.CharField(
         blank=False,
-        max_length=50
+        max_length=50,
     )
     html_classes = models.CharField(
         blank=True,
