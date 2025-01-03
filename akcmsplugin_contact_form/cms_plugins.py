@@ -31,7 +31,9 @@ class ContactFormCMSPlugin(CMSPluginBase):
         request = context["request"]
         if request.method == "POST":
 
-            message = _("New message from your website") + ":" + "\n\n"
+            subject = _("LuckyKV - Request for") + " " + _(instance.topic)
+
+            message = subject + ":" + "\n\n"
 
             email_field = [  # noqa: RUF015
                 inst for inst in instance.child_plugin_instances
@@ -41,6 +43,7 @@ class ContactFormCMSPlugin(CMSPluginBase):
             email_key = slugify(email_field.label)
             email = request.POST[email_key]
 
+            # print("Topic:", instance.topic)
             # print("instance:", instance)
             # print("email_field:", email_field)
             # print("email_key:", email_key)
@@ -59,7 +62,7 @@ class ContactFormCMSPlugin(CMSPluginBase):
                 message += f"{key.capitalize()}: {request.POST[key]}\n"
 
             EmailMessage(
-                subject=_("New message from your website"),
+                subject=subject,
                 body=message,
                 from_email=settings.SITE_FROM_FORM_EMAIL,
                 to=[settings.SITE_FROM_FORM_EMAIL],

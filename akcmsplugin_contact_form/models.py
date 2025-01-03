@@ -11,6 +11,10 @@ class ContactFormCMS(CMSPlugin):
         blank=True,
         max_length=255
     )
+    topic = models.CharField(
+        blank=True,
+        max_length=255
+    )
 
     def __str__(self):
         return self.email
