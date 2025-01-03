@@ -21,14 +21,6 @@ class ContactFormBaseFieldCMS(CMSPlugin):
         blank=False,
         max_length=255
     )
-    html_id = models.CharField(
-        blank=False,
-        max_length=50,
-    )
-    html_name = models.CharField(
-        blank=False,
-        max_length=50,
-    )
     html_classes = models.CharField(
         blank=True,
         max_length=255

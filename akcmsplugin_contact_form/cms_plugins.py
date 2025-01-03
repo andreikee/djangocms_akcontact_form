@@ -3,6 +3,7 @@ from cms.plugin_pool import plugin_pool
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.utils.translation import gettext_lazy as _
+from django.template.defaultfilters import slugify
 
 from . import models
 
@@ -37,19 +38,19 @@ class ContactFormCMSPlugin(CMSPluginBase):
                 if isinstance(inst, models.ContactFormEmailFieldCMS)
             ][0]
 
-            email_key = email_field.html_name
+            email_key = slugify(email_field.label)
             email = request.POST[email_key]
 
             # print("instance:", instance)
             # print("email_field:", email_field)
             # print("email_key:", email_key)
-            # print("request.POST:", request.POST[email_key])
+            # print("request.POST:", email)
 
             submit_field = [  # noqa: RUF015
                 inst for inst in instance.child_plugin_instances
                 if isinstance(inst, models.ContactFormSubmitFieldCMS)
             ][0]
-            submit_key = submit_field.html_name
+            submit_key = slugify(submit_field.label)
 
             for key in request.POST:
                 if key in ["csrfmiddlewaretoken", submit_key]:
