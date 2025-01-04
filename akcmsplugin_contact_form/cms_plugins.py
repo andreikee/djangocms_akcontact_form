@@ -2,8 +2,8 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.conf import settings
 from django.core.mail import EmailMessage
-from django.utils.translation import gettext_lazy as _
 from django.template.defaultfilters import slugify
+from django.utils.translation import gettext_lazy as _
 
 from . import models
 
@@ -28,6 +28,10 @@ class ContactFormCMSPlugin(CMSPluginBase):
     ]
 
     def render(self, context, instance, placeholder):
+        instance.is_success = False
+        instance.success_message = _("Thank you for your message. We will get back to you soon.")
+        context = super().render(context, instance, placeholder)
+
         request = context["request"]
         if request.method == "POST":
 
@@ -69,6 +73,10 @@ class ContactFormCMSPlugin(CMSPluginBase):
                 # reply_to=[instance.email],
                 bcc=[email],
             ).send()
+
+            instance.is_success = True
+
+            # return HttpResponseRedirect("/thanks/")
 
         context.update({
             "placeholder": placeholder,
