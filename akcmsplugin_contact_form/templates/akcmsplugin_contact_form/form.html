@@ -2,18 +2,23 @@
 
 <div class="p-0">
   <div class="d-flex flex-column justify-content-center my-2 shadow" style="width: 650px;">
-    <div class="d-flex justify-content-center bg-light p-2">
-      <h2>{% blocktranslate with topic=instance.topic %} {{topic}} request {% endblocktranslate %}</h2>
+    <div class="d-flex justify-content-center bg-light p-2 px-4">
+      {% if not instance.is_success %}
+        <h2>{% blocktranslate with topic=instance.topic %} {{ topic }} request{% endblocktranslate %}</h2>
+      {% else %}
+        <h2 class="text-success m-4">{{ instance.success_message }}</h2>
+      {% endif %}
     </div>
+    {% if not instance.is_success %}
+      <div class="p-3">
+        <form action="" method="POST" class="{{ instance.html_classes }}">
+          {% csrf_token %}
 
-    <div class="p-3">
-      <form action="" method="POST" class="{{ instance.html_classes }}">
-        {% csrf_token %}
-
-        {% for plugin in instance.child_plugin_instances %}
-          {% render_plugin plugin %}
-        {% endfor %}
-      </form>
-    </div>
+          {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+          {% endfor %}
+        </form>
+      </div>
+    {% endif %}
   </div>
 </div>
