@@ -4,7 +4,7 @@
     {% if instance.type == 'button' %}
     <button type="submit"
         value="{{ instance.label }}"
-        class="btn btn-primary {{ instance.html_classes }}"
+        class="btn btn-primary py-3 my-3 {{ instance.html_classes }}"
         {% include 'akcmsplugin_contact_form/id_and_name.html' %}
         >{% translate instance.label %}</button>
     {% elif instance.type == 'input' %}
@@ -14,7 +14,7 @@
         {% include 'akcmsplugin_contact_form/id_and_name.html' %}
         />
     {% endif %}
-    <div class="d-flex text-warning justify-content-center align-items-center m-3 col-12">
-        <div>{% translate "Your request is not yet submitted" %}</div>
+    <div class="d-flex alert alert-warning justify-content-center align-items-center m-0 py-2 col-12 lead" role="alert">
+        <div>{% translate "Your request is not yet submitted!" %}</div>
     </div>
 </div>
