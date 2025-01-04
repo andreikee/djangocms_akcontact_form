@@ -4,9 +4,12 @@
   <div class="d-flex flex-column justify-content-center my-2 shadow" style="width: 650px;">
     <div class="d-flex justify-content-center bg-light p-2 px-4">
       {% if not instance.is_success %}
-        <h2>{% blocktranslate with topic=instance.topic %} {{ topic }} request{% endblocktranslate %}</h2>
+        <h2 class="">{% translate instance.topic %}</h2>
       {% else %}
-        <h2 class="text-success m-4">{{ instance.success_message }}</h2>
+        <div class="d-block text-success justify-content-center m-3">
+          <h2 class="text-center">{{ instance.success_message_title }}</h2>
+          <p class="text-center lead">{{ instance.success_message_body }}</p>
+        </div>
       {% endif %}
     </div>
     {% if not instance.is_success %}
