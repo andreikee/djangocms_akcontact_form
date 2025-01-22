@@ -37,7 +37,7 @@ class ContactFormCMSPlugin(CMSPluginBase):
         request = context["request"]
         if request.method == "POST":
 
-            subject = _("LuckyKV - ") + " " + _(instance.topic)
+            subject = "LuckyKV - " + " " + _(instance.topic)
 
             message = subject + ":" + "\n\n"
 
