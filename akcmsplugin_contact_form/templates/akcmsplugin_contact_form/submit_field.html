@@ -3,13 +3,13 @@
 <div class="d-flex flex-wrap justify-content-center m-0 p-0">
     {% if instance.type == 'button' %}
     <button type="submit"
-        value="{{ instance.label }}"
+        value="{% translate instance.label %}"
         class="btn btn-primary py-3 my-3 {{ instance.html_classes }}"
         {% include 'akcmsplugin_contact_form/id_and_name.html' %}
         >{% translate instance.label %}</button>
     {% elif instance.type == 'input' %}
     <input type="submit"
-        value="{{ instance.label }}"
+        value="{% translate instance.label %}"
         class="{{ instance.html_classes }}"
         {% include 'akcmsplugin_contact_form/id_and_name.html' %}
         />
