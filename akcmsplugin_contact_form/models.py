@@ -20,7 +20,21 @@ class ContactFormCMS(CMSPlugin):
         return self.email
 
 
-class ContactFormBaseFieldCMS(CMSPlugin):
+# class ContactFormBaseFieldCMS(CMSPlugin):
+#     label = models.CharField(
+#         blank=False,
+#         max_length=255
+#     )
+#     html_classes = models.CharField(
+#         blank=True,
+#         max_length=255
+#     )
+
+#     def __str__(self):
+#         return self.label
+
+
+class ContactFormTextFieldCMS(CMSPlugin):
     label = models.CharField(
         blank=False,
         max_length=255
@@ -29,12 +43,29 @@ class ContactFormBaseFieldCMS(CMSPlugin):
         blank=True,
         max_length=255
     )
+    html_placeholder = models.CharField(
+        blank=True,
+        max_length=255
+    )
+    default_value = models.CharField(
+        blank=True,
+        max_length=255
+    )
+    required = models.BooleanField()
 
     def __str__(self):
         return self.label
 
 
-class ContactFormTextFieldCMS(ContactFormBaseFieldCMS):
+class ContactFormEmailFieldCMS(CMSPlugin):
+    label = models.CharField(
+        blank=False,
+        max_length=255
+    )
+    html_classes = models.CharField(
+        blank=True,
+        max_length=255
+    )
     html_placeholder = models.CharField(
         blank=True,
         max_length=255
@@ -45,20 +76,19 @@ class ContactFormTextFieldCMS(ContactFormBaseFieldCMS):
     )
     required = models.BooleanField()
 
+    def __str__(self):
+        return self.label
 
-class ContactFormEmailFieldCMS(ContactFormBaseFieldCMS):
-    html_placeholder = models.CharField(
+
+class ContactFormPhoneFieldCMS(CMSPlugin):
+    label = models.CharField(
+        blank=False,
+        max_length=255
+    )
+    html_classes = models.CharField(
         blank=True,
         max_length=255
     )
-    default_value = models.CharField(
-        blank=True,
-        max_length=255
-    )
-    required = models.BooleanField()
-
-
-class ContactFormPhoneFieldCMS(ContactFormBaseFieldCMS):
     html_placeholder = models.CharField(
         blank=True,
         max_length=255
@@ -77,8 +107,19 @@ class ContactFormPhoneFieldCMS(ContactFormBaseFieldCMS):
     )
     required = models.BooleanField()
 
+    def __str__(self):
+        return self.label
 
-class ContactFormTextAreaFieldCMS(ContactFormBaseFieldCMS):
+
+class ContactFormTextAreaFieldCMS(CMSPlugin):
+    label = models.CharField(
+        blank=False,
+        max_length=255
+    )
+    html_classes = models.CharField(
+        blank=True,
+        max_length=255
+    )
     html_placeholder = models.CharField(
         blank=True,
         max_length=255
@@ -97,16 +138,38 @@ class ContactFormTextAreaFieldCMS(ContactFormBaseFieldCMS):
     )
     required = models.BooleanField()
 
+    def __str__(self):
+        return self.label
 
-class ContactFormCheckboxFieldCMS(ContactFormBaseFieldCMS):
-    value = models.CharField(
+
+class ContactFormCheckboxFieldCMS(CMSPlugin):
+    label = models.CharField(
         blank=False,
         max_length=255
     )
-    checked = models.BooleanField()
+    html_classes = models.CharField(
+        blank=True,
+        max_length=255
+    )
+    value = models.CharField(
+        blank=True,
+        max_length=255
+    )
+    checked = models.BooleanField(blank=True)
+
+    def __str__(self):
+        return self.label
 
 
-class ContactFormSubmitFieldCMS(ContactFormBaseFieldCMS):
+class ContactFormSubmitFieldCMS(CMSPlugin):
+    label = models.CharField(
+        blank=False,
+        max_length=255
+    )
+    html_classes = models.CharField(
+        blank=True,
+        max_length=255
+    )
     type = models.CharField(
         blank=False,
         max_length=255,
@@ -115,3 +178,6 @@ class ContactFormSubmitFieldCMS(ContactFormBaseFieldCMS):
             ('input', 'Input')
         ]
     )
+
+    def __str__(self):
+        return self.label
