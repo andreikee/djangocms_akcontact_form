@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025 Andrei Krivoshei
+# This file is distributed under the same license as the "akcmsplugin_contact_form" package.
+# Andrei Krivoshei <andrei.krivoshei@gmail.com>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-22 12:12+0200\n"
+"PO-Revision-Date: 2025-01-22 12:12+0200\n"
+"Last-Translator: Andrei Krivoshei <andrei.krivoshei@gmail.com>\n"
+"Language: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: akcmsplugin_contact_form/cms_plugins.py:14
+msgid "Contact Form"
+msgstr "Контактная форма"
+
+#: akcmsplugin_contact_form/cms_plugins.py:32
+msgid "Thank you for your message."
+msgstr "Спасибо за ваше сообщение."
+
+#: akcmsplugin_contact_form/cms_plugins.py:33
+msgid "We will get back to you soon."
+msgstr "Мы скоро свяжемся с вами."
+
+#: akcmsplugin_contact_form/cms_plugins.py:94
+msgid "Text Field"
+msgstr "Текстовое поле"
+
+#: akcmsplugin_contact_form/cms_plugins.py:103
+msgid "Email Field"
+msgstr "Поле электронной почты"
+
+#: akcmsplugin_contact_form/cms_plugins.py:112
+msgid "Phone Field"
+msgstr "Поле телефона"
+
+#: akcmsplugin_contact_form/cms_plugins.py:121
+msgid "Text Area Field"
+msgstr "Поле текстовой области"
+
+#: akcmsplugin_contact_form/cms_plugins.py:130
+msgid "Checkbox Field"
+msgstr "Поле флажка"
+
+#: akcmsplugin_contact_form/cms_plugins.py:139
+msgid "Radio Field"
+msgstr "Поле радио кнопки"
+
+#: akcmsplugin_contact_form/cms_plugins.py:148
+msgid "Date Field"
+msgstr "Поле даты"
+
+#: akcmsplugin_contact_form/cms_plugins.py:157
+msgid "Time Field"
+msgstr "Поле времени"
+
+#: akcmsplugin_contact_form/cms_plugins.py:175
+msgid "Submit Field"
+msgstr "Поле отправки"
+
+#: akcmsplugin_contact_form/templates/akcmsplugin_contact_form/submit_field.html:18
+msgid "Your request is not yet submitted!"
+msgstr "Ваш запрос еще не отправлен!"
