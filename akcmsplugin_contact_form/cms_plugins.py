@@ -28,11 +28,11 @@ class ContactFormCMSPlugin(CMSPluginBase):
     ]
 
     def render(self, context, instance, placeholder):
+        context = super().render(context, instance, placeholder)
+
         instance.is_success = False
         instance.success_message_title = _("Thank you for your message.")
         instance.success_message_body = _("We will get back to you soon.")
-
-        context = super().render(context, instance, placeholder)
 
         request = context["request"]
         if request.method == "POST":
