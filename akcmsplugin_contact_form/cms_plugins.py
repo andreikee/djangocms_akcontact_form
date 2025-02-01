@@ -41,13 +41,13 @@ class ContactFormCMSPlugin(CMSPluginBase):
 
             message = subject + ":" + "\n\n"
 
-            email_field = [  # noqa: RUF015
+            visitor_email_field = [  # noqa: RUF015
                 inst for inst in instance.child_plugin_instances
                 if isinstance(inst, models.ContactFormEmailFieldCMS)
             ][0]
 
-            email_key = slugify(email_field.label)
-            email = request.POST[email_key]
+            visitor_email_key = slugify(visitor_email_field.label)
+            visitor_email = request.POST[visitor_email_key]
 
             # print("Topic:", instance.topic)
             # print("instance:", instance)
@@ -70,10 +70,12 @@ class ContactFormCMSPlugin(CMSPluginBase):
             EmailMessage(
                 subject=subject,
                 body=message,
-                from_email=settings.SITE_FROM_FORM_EMAIL,
-                to=[settings.SITE_FROM_FORM_EMAIL],
+                from_email=instance.email,
+                to=[instance.email],
+                # from_email=settings.SITE_FROM_FORM_EMAIL,
+                # to=[settings.SITE_FROM_FORM_EMAIL],
                 # reply_to=[instance.email],
-                bcc=[email],
+                bcc=[visitor_email],
             ).send()
 
             instance.is_success = True
