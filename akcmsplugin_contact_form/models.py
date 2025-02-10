@@ -5,7 +5,6 @@ from django.db import models
 
 class ContactFormCMS(CMSPlugin):
     email = models.CharField(
-        default=settings.SITE_FROM_FORM_EMAIL,
         verbose_name="From Email",
         blank=False,
         max_length=255
