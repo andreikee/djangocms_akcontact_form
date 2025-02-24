@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-22 12:12+0200\n"
+"POT-Creation-Date: 2025-02-11 13:29+0200\n"
 "PO-Revision-Date: 2025-01-22 12:12+0200\n"
 "Last-Translator: Andrei Krivoshei <andrei.krivoshei@gmail.com>\n"
 "Language: Russian\n"
@@ -23,47 +23,47 @@ msgstr ""
 msgid "Contact Form"
 msgstr "Контактная форма"
 
-#: akcmsplugin_contact_form/cms_plugins.py:32
+#: akcmsplugin_contact_form/cms_plugins.py:34
 msgid "Thank you for your message."
 msgstr "Спасибо за ваше сообщение."
 
-#: akcmsplugin_contact_form/cms_plugins.py:33
+#: akcmsplugin_contact_form/cms_plugins.py:35
 msgid "We will get back to you soon."
 msgstr "Мы скоро свяжемся с вами."
 
-#: akcmsplugin_contact_form/cms_plugins.py:94
+#: akcmsplugin_contact_form/cms_plugins.py:96
 msgid "Text Field"
 msgstr "Текстовое поле"
 
-#: akcmsplugin_contact_form/cms_plugins.py:103
+#: akcmsplugin_contact_form/cms_plugins.py:105
 msgid "Email Field"
 msgstr "Поле электронной почты"
 
-#: akcmsplugin_contact_form/cms_plugins.py:112
+#: akcmsplugin_contact_form/cms_plugins.py:114
 msgid "Phone Field"
 msgstr "Поле телефона"
 
-#: akcmsplugin_contact_form/cms_plugins.py:121
+#: akcmsplugin_contact_form/cms_plugins.py:123
 msgid "Text Area Field"
 msgstr "Поле текстовой области"
 
-#: akcmsplugin_contact_form/cms_plugins.py:130
+#: akcmsplugin_contact_form/cms_plugins.py:132
 msgid "Checkbox Field"
 msgstr "Поле флажка"
 
-#: akcmsplugin_contact_form/cms_plugins.py:139
+#: akcmsplugin_contact_form/cms_plugins.py:141
 msgid "Radio Field"
 msgstr "Поле радио кнопки"
 
-#: akcmsplugin_contact_form/cms_plugins.py:148
+#: akcmsplugin_contact_form/cms_plugins.py:150
 msgid "Date Field"
 msgstr "Поле даты"
 
-#: akcmsplugin_contact_form/cms_plugins.py:157
+#: akcmsplugin_contact_form/cms_plugins.py:159
 msgid "Time Field"
 msgstr "Поле времени"
 
-#: akcmsplugin_contact_form/cms_plugins.py:175
+#: akcmsplugin_contact_form/cms_plugins.py:177
 msgid "Submit Field"
 msgstr "Поле отправки"
 
