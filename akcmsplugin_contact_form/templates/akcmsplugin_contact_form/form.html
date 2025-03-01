@@ -1,7 +1,7 @@
 {% load cms_tags i18n %}
 
 <div class="p-0">
-  <div class="d-flex flex-column justify-content-center my-2 shadow" style="width: 650px;">
+  <div class="d-flex flex-column justify-content-center my-2 shadow" style="max-width: 650px;">
     <div class="d-flex justify-content-center bg-light p-2 px-4">
       {% if not instance.is_success %}
         <h2 class="">{% translate instance.topic %}</h2>
