@@ -1,12 +1,12 @@
 {% extends 'akcmsplugin_contact_form/field_basic.html' %}
 
 {% block field %}
-    <input type="tel"
-        {% include 'akcmsplugin_contact_form/id_and_name.html' %}
-        class="form-control {{ instance.html_classes }}"
-        placeholder="{{ instance.html_placeholder }}"
-        value="{{ instance.default_value }}"
-        maxlength="{{ instance.phone_max_length }}"
-        {% if instance.pattern %}pattern="{{ instance.phone_pattern }}"
-        {% endif %} {% if instance.required %}required{% endif %}>
+        <input type="tel"
+            {% include 'akcmsplugin_contact_form/id_and_name.html' %}
+            class="form-control {{ instance.html_classes }}"
+            placeholder={% if instance.html_placeholder %}"{{ instance.html_placeholder }}"{% else %}"Phone number"{% endif %}
+            value="{{ instance.default_value }}"
+            maxlength="{{ instance.phone_max_length }}"
+            {% if instance.pattern %}pattern="{{ instance.phone_pattern }}"
+            {% endif %} {% if instance.required %}required{% endif %}>
 {% endblock %}

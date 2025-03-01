@@ -4,7 +4,7 @@
     <input type="email"
         {% include 'akcmsplugin_contact_form/id_and_name.html' %}
         class="form-control {{ instance.html_classes }}"
-        placeholder="{{ instance.html_placeholder }}"
+        placeholder={% if instance.html_placeholder %}"{{ instance.html_placeholder }}"{% else %}"Email"{% endif %}
         value="{{ instance.default_value }}"
         {% if instance.required %}required{% endif %}>
 {% endblock %}
