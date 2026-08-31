@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-11 13:29+0200\n"
+"POT-Creation-Date: 2025-03-19 19:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,54 +18,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: akcmsplugin_contact_form/cms_plugins.py:14
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:14
 msgid "Contact Form"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:34
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:34
 msgid "Thank you for your message."
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:35
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:35
 msgid "We will get back to you soon."
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:96
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:96
 msgid "Text Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:105
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:105
 msgid "Email Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:114
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:114
 msgid "Phone Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:123
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:123
 msgid "Text Area Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:132
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:132
 msgid "Checkbox Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:141
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:141
 msgid "Radio Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:150
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:150
 msgid "Date Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:159
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:159
 msgid "Time Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/cms_plugins.py:177
+#: luckykv/akcmsplugin_contact_form/cms_plugins.py:177
 msgid "Submit Field"
 msgstr ""
 
-#: akcmsplugin_contact_form/templates/akcmsplugin_contact_form/submit_field.html:18
+#: luckykv/akcmsplugin_contact_form/templates/akcmsplugin_contact_form/submit_field.html:18
 msgid "Your request is not yet submitted!"
 msgstr ""
