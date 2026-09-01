@@ -1,0 +1,64 @@
+[build-system]
+requires = [
+    "packaging>=24.2",
+    "setuptools>=77",
+    "wheel>=0.43",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "akcmsplugin-contact-form"
+dynamic = ["version"]
+description = "A Django CMS plugin to create functional contact forms."
+readme = {file = "README.md", content-type = "text/markdown"}
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11,<3.12"
+maintainers = [
+    {name = "Andrei Krivoshei", email = "andrei.krivoshei@gmail.com"},
+]
+keywords = ["django", "djangocms", "plugin", "form", "contact", "email"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 5.1",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "Django>=5.1.3,<5.2",
+    "django-cms>=4.1.4,<4.2",
+]
+
+[project.optional-dependencies]
+test = [
+    "build>=1.2,<2",
+    "packaging>=24.2",
+    "pytest>=7.4,<9",
+    "setuptools>=77",
+    "wheel>=0.43",
+]
+
+[project.urls]
+Homepage = "https://github.com/andreikee/djangocms_akcontact_form"
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.dynamic]
+version = {attr = "akcmsplugin_contact_form.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["akcmsplugin_contact_form*"]
+
+[tool.setuptools.package-data]
+akcmsplugin_contact_form = [
+    "templates/akcmsplugin_contact_form/*.html",
+    "locale/*/LC_MESSAGES/*.po",
+    "locale/*/LC_MESSAGES/*.mo",
+]
