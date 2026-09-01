@@ -153,7 +153,7 @@ def test_built_metadata_and_license(built_artifacts) -> None:
     for metadata in metadata_documents:
         assert metadata["Name"] == "akcmsplugin-contact-form"
         assert metadata["Version"] == "0.3"
-        assert metadata["Requires-Python"] == "<3.12,>=3.11"
+        assert metadata["Requires-Python"] == "<3.13,>=3.11"
         assert metadata["License-Expression"] == "MIT"
         assert metadata.get_all("License-File") == ["LICENSE"]
         requirements = {
