@@ -26,9 +26,9 @@ The current `master` protection uses these settings:
 2. Require conversation resolution before merging.
 3. Disable force pushes and branch deletion.
 4. Enable the option that prevents administrators from bypassing the rules.
-5. Require one approval after a second maintainer is available. Until then,
-   requiring a pull request with zero approvals is practical for a solo
-   maintainer.
+5. Keep the approval requirement at zero while the repository has one
+   maintainer. After a second maintainer is available, change this setting to
+   require one approval.
 6. Require GitHub Actions status checks only after a CI workflow exists and its
    check names are stable.
 
