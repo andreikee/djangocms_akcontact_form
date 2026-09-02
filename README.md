@@ -58,3 +58,4 @@ fork declares support for Python 3.11-3.12, Django 5.1.x, and django CMS 4.1.x.
 The default `master` branch should be changed through pull requests rather than
 direct pushes. Recommended branch protection settings are documented in
 [docs/REPOSITORY_MAINTENANCE.md](docs/REPOSITORY_MAINTENANCE.md).
+The recommended protection policy is currently active on `master`.

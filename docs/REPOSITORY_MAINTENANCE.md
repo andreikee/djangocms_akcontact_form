@@ -6,16 +6,21 @@ As checked on 2026-09-02, the public repository
 `andreikee/djangocms_akcontact_form` has:
 
 - `master` as its default branch;
-- no classic branch-protection rule;
+- an active classic branch-protection rule;
 - no repository ruleset;
 - pull requests, merge commits, squash merges, and rebase merges enabled.
+
+The active rule requires pull requests, resolves conversations before merge,
+enforces the rules for administrators, disables force pushes and branch
+deletion, and requires zero approvals. No status check is required yet because
+the repository has no stable CI workflow.
 
 The repository owner has administrative permission. The current state is a
 repository configuration fact, not a recommendation.
 
-## Recommended Protection
+## Applied Protection Policy
 
-Protect `master` with these settings:
+The current `master` protection uses these settings:
 
 1. Require a pull request before merging.
 2. Require conversation resolution before merging.
@@ -27,9 +32,8 @@ Protect `master` with these settings:
 6. Require GitHub Actions status checks only after a CI workflow exists and its
    check names are stable.
 
-The protection rule should not require an unavailable status check. The fork
-currently has no status checks attached to the reviewed package PR, so adding
-required checks before CI exists would block legitimate merges.
+The rule intentionally does not require an unavailable status check. Once a
+stable CI workflow exists, required checks can be added deliberately.
 
 ## GitHub UI Procedure
 
@@ -41,7 +45,6 @@ then a branch ruleset targeting `master`.
 ## Automation Boundary
 
 An administrator can configure the rule through the GitHub REST API or GitHub
-CLI. This project does not automate repository-setting changes in the package
-code or documentation workflow. Repository protection changes should be made
-deliberately by the owner or after explicit authorization, then verified from
-the GitHub repository settings and API.
+CLI. The current rule was applied through the GitHub REST API after explicit
+owner authorization and verified through the API. Future repository-setting
+changes should be made deliberately and verified from GitHub settings and API.
