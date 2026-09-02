@@ -3,7 +3,7 @@
 ## Current `master` State
 
 As checked on 2026-09-02, the public repository
-`andreikee/djangocms_akcontact_form` has:
+`NELOdev-studio/djangocms_akcontact_form` has:
 
 - `master` as its default branch;
 - an active classic branch-protection rule;

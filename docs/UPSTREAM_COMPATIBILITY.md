@@ -7,11 +7,15 @@ snapshots:
 
 - Upstream: `juliarizza/djangocms_contact_form`, `master`, commit
   `421408eb3ae6d0fed7d674400371663cb5338fa2`.
-- Fork: `andreikee/djangocms_akcontact_form`, fork `master` branch, merge
-  commit `a5ea1c255d75168f8871dd9b97dbd9e932fad15e`.
+- Fork at comparison time: `andreikee/djangocms_akcontact_form`, fork `master`
+  branch, merge commit `a5ea1c255d75168f8871dd9b97dbd9e932fad15e`.
+- Current fork location after the 2026-09-02 transfer:
+  `NELOdev-studio/djangocms_akcontact_form`, `master` at commit
+  `862d6975574eb7b48fb1798cf301f2fdb777dda8`.
 
 The upstream repository is archived and exposes only its `master` branch. The
-fork is active and keeps the upstream link for provenance.
+fork is active at the current organization location and keeps the upstream link
+for provenance.
 
 ## Upstream Findings
 
