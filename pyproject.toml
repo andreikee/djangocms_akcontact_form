@@ -45,7 +45,7 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/andreikee/djangocms_akcontact_form"
+Homepage = "https://github.com/NELOdev-studio/djangocms_akcontact_form"
 
 [tool.setuptools]
 include-package-data = true
